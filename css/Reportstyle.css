@@ -1,0 +1,359 @@
+body {
+	background-color: #E4E7EB;
+	color: #1F2933;
+	font-size: 100%;	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body.dark_mode {
+	background-color: #1F2933;
+	color: #E4E7EB;
+}
+body.dark_mode a:link {
+	color: #00A8CC;
+}
+
+body.dark_mode a:visited {
+	color: #F79B19;
+}
+
+body.dark_mode .R_Lbl {
+	background-color:  #504A40;
+	border-color: black;
+}
+
+body.dark_mode .dark_toggle {
+	color: #FDB813;
+}
+body.dark_mode h1 {
+	color: #63e6be;
+}
+
+body.dark_mode .Report_Text {
+	border-color: #D9E2EC;;
+	background-color: #243B53
+}
+
+body.dark_mode .exclame {
+	color: #F79B19;
+}
+
+div.anim {
+	animation: shrink_grow 0.4s;
+	/* When the animation is finished, start again */
+	/*animation-iteration-count: infinite;*/
+}
+
+@keyframes shrink_grow {
+	30% {transform: scale(0.6);}
+	90% {transform: scale(1.2);}
+	100% {transform: scale(1.0);}
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+h1 {
+	color: navy;
+	font-size: 2.5em;
+	vertical-align: middle;
+}
+
+header {
+	width: 100%;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.75;
+}
+span:focus {
+	color: #F79B19;
+	outline: none;
+}
+
+body.dark_mode span:focus {
+	color: #63e6be;
+	outline: none;
+}
+
+#body {
+	padding-bottom: 100px;
+	padding-left: 10px;
+}
+
+#ccLS_Refs {
+  display: block;
+  opacity: 1;
+}
+input[type="radio"] {
+	display: none;
+	cursor: pointer;
+
+}
+
+.exclame {
+	color: #551A8B;
+}
+
+.R_Lbl {
+    height: 100%;
+    display: inline-block;
+    background: #D3CEC4;
+    border-radius: 18px;
+	padding: 0.7em 0.9em;
+	margin-bottom: 9px;
+    text-align: center;
+    position: relative;
+	font-size: 1.0em;
+	box-shadow: 0 6px #999;
+	-webkit-transition-duration: 0.3s; /* Safari */
+	transition-duration: 0.3s;
+}
+
+.Dim_Inp {
+	display: inline-block;
+	width: 5em;
+	padding: 2px;
+	border: 3px solid gray;
+	border-radius: 6px;
+	font-size: 1.0em;
+}
+
+.Dim_Inp:focus {
+	border: 3px solid #F79B19;
+	outline: none;
+}
+
+body.dark_mode .Dim_Inp:focus {
+	border: 3px solid #63e6be;
+	outline: none;
+}
+input[type="date"] {
+	display: inline-block;
+	border: 2px solid gray;
+	padding: 3px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	
+}
+.Report_Text {
+	height: 100%;
+	width: 75%;
+	display: block;
+	border-width: 3px;
+	border-style: solid;
+	border-color: #243B53;
+	background-color: #D9E2EC;
+	border-radius: 20px;
+	padding: 1em;
+	margin: 10px
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+input[type="radio"]:checked + .R_Lbl {
+	background: #344a6b;
+	color: #E4E7EB;
+	box-shadow: 0 3px #666;
+	transform: translateY(3px);
+}
+input[type="radio"]:disabled + .R_Lbl {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+	box-shadow: none;
+	cursor: not-allowed;
+}
+input[type="radio"]:hover:not([disabled]) +.R_Lbl {
+		 cursor: pointer;
+		 background-color: #857F72 !important;
+}
+footer {
+	background: #344a6b;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	text-align: right;
+}
+
+footer img {
+	float: left;
+}
+footer div {	
+	color: white;
+	vertical-align: middle;
+	padding-right: 20px;
+
+}
+.calculator label {
+    display: inline-block;
+    width: 9em;
+    text-align: right;
+    padding-right: 0.2em;
+}
+.calculator input {
+    display: inline-block;
+	border: 3px solid gray;
+	width: 10em;
+	border-radius: 6px;
+	font-size: 1.0em;
+}
+
+.calculator input:focus {
+	border: 3px solid #F79B19;
+	outline: none;
+}
+
+body.dark_mode .calculator input:focus {
+	border: 3px solid #63e6be;
+	outline: none;
+}
+
+.button:focus {
+	outline: 3px solid #F79B19;
+	border: none;
+}
+
+body.dark_mode .button:focus {
+	outline: 3px solid #63e6be;
+	border: none;
+}
+.button {
+	background-color: lightgray;
+	border: none;
+	border-radius: 4px;
+	color: black;
+	padding: 0.7em 0.9em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.0em;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+ }
+
+ @media (hover: hover) {
+	 .button:hover {
+		 background-color: darkgray !important;
+	 }
+	 .help_icon:hover {
+		 color: red;
+		 cursor: pointer;
+	 }
+}
+.dark_toggle {
+	background-color: gray;
+	color: purple;
+	padding: 0.7em 1.5em;
+	border-radius: 20px;
+	cursor: pointer;
+	margin: 1em;
+}
+
+.dark_toggle:hover {
+	background-color: darkgray;
+}
+
+.button:disabled,
+.button[disabled]{
+	border: 3px solid #999999;
+	background-color: #cccccc !important;
+	color: #666666 !important;
+	cursor: not-allowed !important;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+	overflow-y: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+body.dark_mode .modal-content {
+	background-color:  #484848;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+	padding: 2px 16px;
+	max-height:  60vh !important;
+	overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
