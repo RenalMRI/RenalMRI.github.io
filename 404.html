@@ -1,0 +1,40 @@
+<?php
+$mydir=getdir("/",$_SERVER['REQUEST_URI']);
+if($mydir!=false)
+{
+    $thedomain = 'https://' . $_SERVER['SERVER_NAME'];
+    header("HTTP/1.1 301 Moved Permanently");
+    header( 'Location: ' . $thedomain.$mydir );
+}
+function getdir($loc,$tfile)
+{
+    $startloc=$_SERVER['DOCUMENT_ROOT'];
+    if (file_exists($startloc.$loc) && $handle = opendir($startloc.$loc)) 
+    {
+        while (false !== ($file = readdir($handle)))
+        {
+            if ($file != "." && $file != ".." && strncasecmp($loc.$file,$tfile,strlen($loc.$file))==0)
+            {
+            if(strncasecmp($loc.$file,$tfile,strlen($tfile))==0)
+            {
+                return $loc.$file;
+                }
+                else
+                {
+                    return getdir($loc.$file."/",$tfile);
+                }
+            }
+        }
+    closedir($handle);
+    }
+    return false;
+}
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Renal MRI - Page Not Found Error"/> 
+<meta name="search" content="Renal MRI - About Us.  Information on the characterization of renal tumors by magnetic resonance imaging" />
