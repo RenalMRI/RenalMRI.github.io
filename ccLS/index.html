@@ -32,18 +32,24 @@
 				});
 			}
 			
-			document.getElementById("acceptTracking").addEventListener("click", function() {
-				localStorage.setItem("trackingccLSConsent", "accepted");
-				consentPopup.style.display = "none";
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('config', 'UA-XXXXXXXX-X');
+			document.addEventListener('DOMContentLoaded', function() {
+				var acceptBtn = document.getElementById('acceptTracking');
+				acceptBtn.addEventListener('click', function() {
+					localStorage.setItem("trackingccLSConsent", "accepted");
+					consentPopup.style.display = "none";
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'UA-XXXXXXXX-X');
+				});
 			});
 			
-			document.getElementByID("denyTracking").addEventListener("click", function() {
-				localStorage.setItem("trackingccLSConsent", "deny");
-				consentPopup.style.display = "none";
+			document.addEventListener('DOMContentLoaded', function() {
+				var denyBtn = document.getElementById('denyTracking');
+				acceptBtn.addEventListener('click', function() {
+					localStorage.setItem("trackingccLSConsent", "deny");
+					consentPopup.style.display = "none";
+				});
 			});
 		} else if (trackingConsent === "accepted") {
 			gtag('config', 'UA-XXXXXXXX-X');
