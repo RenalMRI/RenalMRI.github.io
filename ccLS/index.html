@@ -35,9 +35,11 @@
 			});
 			
 			document.getElementByID("denyTracking").addEventListener("click", function() {
-				localStorage.setItem("trackingccLSConsent", "accepted");
+				localStorage.setItem("trackingccLSConsent", "deny");
 				consentPopup.style.display = "none";
 			});
+		} else if (trackingConsent === "accepted") {
+			gtag('config', 'UA-XXXXXXXX-X');
 		}
 	</script>
   
