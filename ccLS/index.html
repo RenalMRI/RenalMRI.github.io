@@ -22,7 +22,8 @@
 			consentPopup.style.backgroundColor = "white";
 			consentPopup.style.padding = "1em";
 			consentPopup.style.border = "1px solid black";
-			consentPopup.innerHTML = "<p>" + disclaimer + "</p><br><p>This website uses Google Analytics to track the number of users from various regions. By clicking "Accept", you acknowledge the above disclaimer and agree to allow tracking. By clicking "Decline", you acknowledge the above disclaimer and decline tracking.</p><br><button id='acceptTracking'>Accept</button> <button id='denyTracking'>Decline</button>";
+			consentPopup.innerHTML = "<p>" + disclaimer + "</p><br><p>This website uses Google Analytics to track the number of users from various regions. By clicking 'Accept', you acknowledge the above disclaimer and agree to allow tracking. By clicking 'Decline', you acknowledge the above disclaimer and decline tracking.</p><br><button id='acceptTracking'>Accept</button> <button id='denyTracking'>Decline</button>";	
+			
 			if (document.body) {
 				document.body.appendChild(consentPopup);
 			} else {
