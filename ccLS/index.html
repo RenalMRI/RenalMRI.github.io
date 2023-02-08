@@ -7,16 +7,39 @@
 	<link rel="stylesheet" type="text/css" href="../css/ccLSCalcstyle.css">
 	<link rel="icon" type="image/svg+xml" href="../favicon.svg">
 	<script type="text/javascript" src="../js/ccLSCalc.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35418901-2"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-35418901-2');
+		var trackingConsent = localStorage.getItem("trackingccLSConsent");
+		if (trackingConsent === null) {
+			var disclaimer = "This ccLS calculator is for general health information only. The calculator is not to be used as a replacement for medical advice, diagnosis, or treatment of any health condition or problem. Users of the calculator should not rely on information provided by the calculator for their own health problems. Questions should be addressed to the user's own physician or other healthcare provider. The authors of this calculator make no warranties, nor express implied representations whatsoever, regarding the accuracy, completeness, timeliness, comparative or controversial nature, or usefulness of any information contained or referenced in the calculator. The authors and their respective institutions do not assume any risk whatsoever for the use of the calculator or the information contained herein. Health related information changes frequently and therefore information contained in the calculator may be outdated, incomplete, or incorrect. Use of the calculator does not create an express or implied physician-patient relationship. The authors and their respective institutions do not endorse or claim validity for the calculator found on this risk website. The activities and products of the authors and the website developers and agents are not endorsed by our past, present, or future employers. The authors of the website do not record user information and do not contact users of the calculator. The user is hereby advised to consult with a physician or other professional healthcare provider prior to making any decisions, or undertaking any actions or not undertaking any actions related to any healthcare problem or issue the user might have at any time, now or in the future. In using the calculator, the user agrees that none of the authors, nor any other party is or will be liable or otherwise responsible for any decision made or any action taken or any action not taken due to use of any information presented in the calculator.";
+			
+			var consentPopup = document.createElement("div");
+			consentPopup.style.position = "fixed";
+			consentPopup.style.left = "50%";
+			consentPopup.style.top = "50%";
+			consentPopup.style.transform = "translate(-50%, -50%)";
+			consentPopup.style.backgroundColor = "white";
+			consentPopup.style.padding = "1em";
+			consentPopup.style.border = "1px solid black";
+			consentPopup.innerHTML = "<p>" + disclaimer + "</p><br><p>Do you allow tracking with Google Analytics?</p><br><button id='acceptTracking'>Acknowledge and Accept</button> <button id='denyTracking'>Acknowledge and Deny</button>";
+			document.body.appendChild(consentPopup);
+			
+			document.getElementById("acceptTracking").addEventListener("click", function() {
+				localStorage.setItem("trackingccLSConsent", "accepted");
+				consentPopup.style.display = "none";
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-XXXXXXXX-X');
+			});
+			
+			document.getElementByID("denyTracking").addEventListener("click", function() {
+				localStorage.setItem("trackingccLSConsent", "accepted");
+				consentPopup.style.display = "none";
+			});
+		}
 	</script>
--->
   
 </head>
 
