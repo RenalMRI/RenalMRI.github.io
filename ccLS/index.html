@@ -23,7 +23,13 @@
 			consentPopup.style.padding = "1em";
 			consentPopup.style.border = "1px solid black";
 			consentPopup.innerHTML = "<p>" + disclaimer + "</p><br><p>Do you allow tracking with Google Analytics?</p><br><button id='acceptTracking'>Acknowledge and Accept</button> <button id='denyTracking'>Acknowledge and Deny</button>";
-			document.body.appendChild(consentPopup);
+			if (document.body) {
+				document.body.appendChild(consentPopup);
+			} else {
+				document.addEventListener('DOMContentLoaded', function () {
+					document.body.appendChild(consentPopup);
+				});
+			}
 			
 			document.getElementById("acceptTracking").addEventListener("click", function() {
 				localStorage.setItem("trackingccLSConsent", "accepted");
