@@ -46,7 +46,7 @@
 			
 			document.addEventListener('DOMContentLoaded', function() {
 				var denyBtn = document.getElementById('denyTracking');
-				acceptBtn.addEventListener('click', function() {
+				denyBtn.addEventListener('click', function() {
 					localStorage.setItem("trackingccLSConsent", "deny");
 					consentPopup.style.display = "none";
 				});
